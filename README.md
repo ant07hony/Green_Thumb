@@ -11,3 +11,6 @@ https://lucid.app/lucidchart/1cdf5a4d-0f59-435e-82a2-d1b44aa6ca0c/edit?viewport_
 
 ERD
 https://online.visual-paradigm.com/app/diagrams/#diagram:proj=0&type=ClassDiagram&width=11&height=8.5&unit=inch
+
+Pitch Deck
+https://docs.google.com/presentation/d/1yVZ-ZEkdc6G_mG-s0EtuzzNvE2ZSDplqXxAlf9tLkvk/edit#slide=id.gd933c8c4a_0_32
