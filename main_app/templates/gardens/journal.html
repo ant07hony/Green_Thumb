@@ -7,8 +7,19 @@
   <div class="card-content">
     <p>Description: {{ garden.description|linebreaks }}</p>
   </div>
+
+  <div class="card">
+    <p>{{ garden.date }} Entry: {{ garden.journal | linebreaks }}   
+    </p>
+  </div>
+
 </div>
 
+<section class="journal-add-btn">
+    <div>
+        <button type="" name="Add Plant" href="">Add Plant</button>
+    </div>
+</section>
 
 {% endblock %}
 

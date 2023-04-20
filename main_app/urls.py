@@ -9,4 +9,6 @@ urlpatterns = [
     path('gardens/', views.gardens_index, name='index'),
     
     path('gardens/<int:garden_id>/', views.journal, name='journal'),
+    
+    path('gardens/create/', views.GardenCreate.as_view(), name='gardens_create'),
 ]

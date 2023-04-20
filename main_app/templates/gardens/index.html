@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% block content %}
+<span>
+    <ul>
+        <li><a href="{% url 'gardens_create' %}">Add Garden</a></li>
+    </ul>
+</span>
 
 <h1>Garden List</h1>
 
@@ -9,7 +14,7 @@
       <span class="card-title">{{ garden.name }}</span>
       <p>Description: {{ garden.description }}</p>
       <p>Date: {{ garden.date }}</p>
-      <p><a href="/gardens/{{ garden.id }}">Journal</a></p>
+      <p><a href="{% url 'journal' garden.id %}">Journal</a></p>
     </div>
   </div>
 {% endfor %}
