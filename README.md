@@ -6,7 +6,7 @@ https://trello.com/b/iCSM3T3h/p3-green-thumb
 
 
 Wireframe
-https://lucid.app/lucidchart/1cdf5a4d-0f59-435e-82a2-d1b44aa6ca0c/edit?viewport_loc=3%2C-106%2C1704%2C1582%2C0_0&invitationId=inv_aee10238-c9cc-408c-b646-370290ab5f98
+https://lucid.app/lucidchart/b4456baf-0770-4cc0-b6b4-3bf1a5b66198/edit?beaconFlowId=57B4A5BE14556D4C&invitationId=inv_b5fedc0b-065f-4e2a-b7c6-846b0e81a307&page=0_0#
 
 
 ERD
