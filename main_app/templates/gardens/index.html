@@ -16,6 +16,12 @@
       <p>Date: {{ garden.date }}</p>
       <p><a href="{% url 'journal' garden.id %}">Journal</a></p>
     </div>
+
+    <div class="card-action">
+        <a href="{% url 'gardens_update' garden.id %}">Edit</a>
+        <a href="{% url 'gardens_delete' garden.id %}">Delete</a>
+    </div>
+
   </div>
 {% endfor %}
 

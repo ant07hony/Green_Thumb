@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from datetime import date
 from django.contrib.auth.models import User
 
 LIGHT = (
@@ -14,7 +15,7 @@ class Garden(models.Model):
     description = models.CharField()
     date = models.DateField()
     journal = models.TextField()
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    
     
     def __str__(self):
         return self.name

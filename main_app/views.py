@@ -24,12 +24,13 @@ def journal(request, garden_id):
 
 class GardenCreate(CreateView):
     model = Garden
-    fields = '__all__'
-    
+    fields = ['name', 'description', 'date', 'journal']
     
 class GardenUpdate(UpdateView):
-    pass
+    model = Garden
+    fields = ['description', 'date', 'journal']
 
 class GardenDelete(DeleteView):
-    pass
+    model = Garden
+    success_url = '/gardens'
     
