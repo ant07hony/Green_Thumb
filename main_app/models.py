@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 LIGHT = (
     ('S', 'Full Sun'),
     ('PS', 'Partial Sun'),
-    ('FS', 'Full Shade')
+    ('FS', 'Full Shade'),
 )
 
 # Create your models here.
@@ -12,7 +12,7 @@ class Garden(models.Model):
     name = models.CharField(max_length=100)
     description = models.CharField()
     date = models.DateField()
-    journal = models.CharField()
+    journal = models.TextField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def __str__(self):
