@@ -30,7 +30,7 @@ def add_plant(request, garden_id, plant_id):
         new_plant = form.save(commit=False)
         new_plant.garden_id = garden_id
         new_plant.save()
-    return redirect('journal', garden_id=garden_id, plant_id=plant_id)
+    return redirect('journal', garden_id=garden_id)
     
 
 class GardenCreate(CreateView):
