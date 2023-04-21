@@ -16,12 +16,12 @@ class Garden(models.Model):
     date = models.DateField()
     journal = models.TextField()
     
-    
     def __str__(self):
         return self.name
     
     def get_absolute_url(self):
         return reverse('journal', kwargs={'garden_id': self.id})
+    
     
 class Care_Guide(models.Model):
     zone = models.CharField()
@@ -31,20 +31,21 @@ class Care_Guide(models.Model):
     companions = models.CharField()
     notes = models.CharField()
     
+    
     def __str__(self):
         return self.name
+    
     
     
 class Plant(models.Model):
     name = models.CharField(max_length=100)
     date = models.DateField()
     variety = models.CharField(max_length=100)
-    care_guide = models.OneToOneField(Care_Guide, on_delete=models.CASCADE)
     seeds_sown = models.IntegerField()
     germination = models.DateField()
+    garden = models.ForeignKey(Garden, default=True, on_delete=models.CASCADE)
+    
     
     def __str__(self):
         return self.name
-    
-    
     

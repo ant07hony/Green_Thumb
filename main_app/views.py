@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import *
+from .forms import PlantForm
 
 # Create your views here.
 def home(request):
@@ -17,9 +18,19 @@ def gardens_index(request):
 
 def journal(request, garden_id):
     garden = Garden.objects.get(id=garden_id)
+    plant_form = PlantForm()
     return render(request, 'gardens/journal.html', {
-       'garden': garden 
+       'garden': garden,
+       'plant_form': plant_form,
     })
+    
+def add_plant(request, garden_id):
+    form = PlantForm(request.POST)
+    if form.is_valid():
+        new_plant = form.save(commit=False)
+        new_plant.garden_id = garden_id
+        new_plant.save()
+    return redirect('journal', garden_id=garden_id)
     
 
 class GardenCreate(CreateView):

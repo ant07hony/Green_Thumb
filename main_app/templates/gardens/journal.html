@@ -15,11 +15,39 @@
 
 </div>
 
-<section class="journal-add-btn">
-    <div>
-        <button type="" name="Add Plant" href="">Add Plant</button>
-    </div>
-</section>
+
+<div class="col s6">
+    <form action="{% url 'add_plant' garden.id %}" method="POST">
+    {% csrf_token %}
+    <!-- Render the inputs -->
+    {{ plant_form.as_p }}
+    <input type="submit" class="btn" value="Add Plant">
+  </form>
+    <table class="striped">
+      <thead>
+        <tr><th>Date</th><th>Varieties</th></tr>
+      </thead>
+      <tbody>
+        {% for plant in garden.plant_set.all %}
+          <tr>
+            <td>{{plant.date}}</td>
+            <td>{{plant.variety}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const dateEl = document.getElementById('id_date')
+    M.Datepicker.init(dateEl, {
+        format: 'yyyy-mm-dd',
+        defaultDate: new Date(),
+        setDefaultDate: true,
+        autoClose: true
+    })
+
+  </script>
 
 {% endblock %}
 
