@@ -1,21 +1,27 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import *
 from .forms import PlantForm
 
 # Create your views here.
+@login_required
 def home(request):
     return render(request, 'home.html')
 
 def about(request):
     return render(request, 'about.html')
 
+@login_required
 def gardens_index(request):
-    gardens = Garden.objects.all()
+    gardens = Garden.objects.filter(user=request.user)
     return render(request, 'gardens/index.html',{
         'gardens': gardens
     })
-
+@login_required
 def journal(request, garden_id):
     garden = Garden.objects.get(id=garden_id)
     plant_form = PlantForm()
@@ -24,6 +30,7 @@ def journal(request, garden_id):
        'plant_form': plant_form,
     })
     
+@login_required
 def add_plant(request, garden_id, plant_id):
     form = PlantForm(request.POST)
     if form.is_valid():
@@ -31,26 +38,44 @@ def add_plant(request, garden_id, plant_id):
         new_plant.garden_id = garden_id
         new_plant.save()
     return redirect('journal', garden_id=garden_id)
+
+def signup(request):
+    error_message = ''
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request,user)
+            return redirect('index')
+        else:
+            error_message = 'Invalid sign up - try again'
+    form = UserCreationForm()
+    context = {'form': form, 'error_message': error_message}
+    return render(request, 'registration/signup.html', context)
     
 
-class GardenCreate(CreateView):
+class GardenCreate(LoginRequiredMixin, CreateView):
     model = Garden
     fields = ['name', 'description', 'date', 'journal']
     
-class GardenUpdate(UpdateView):
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+    
+class GardenUpdate(LoginRequiredMixin, UpdateView):
     model = Garden
     fields = ['description', 'date', 'journal']
 
-class GardenDelete(DeleteView):
+class GardenDelete(LoginRequiredMixin, DeleteView):
     model = Garden
     success_url = '/gardens'
     
-class PlantUpdate(UpdateView):
+class PlantUpdate(LoginRequiredMixin, UpdateView):
     model = Plant
     fields = ['name','date','variety']
     success_url = '/gardens'
 
-class PlantDelete(DeleteView):
+class PlantDelete(LoginRequiredMixin, DeleteView):
     model = Plant
     success_url = '/garden/<int:garden_id>'
     

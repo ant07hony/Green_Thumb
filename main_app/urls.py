@@ -21,4 +21,6 @@ urlpatterns = [
     path('gardens/<int:pk>/update', views.PlantUpdate.as_view(), name='edit_plant'),
     
     path('gardens/<int:pk>/delete', views.PlantDelete.as_view(), name='delete_plant'),
+    
+    path('accounts/signup/', views.signup, name='signup'),
 ]
