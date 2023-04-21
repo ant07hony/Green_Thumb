@@ -37,6 +37,10 @@
                     <td>{{plant.name}}</td>
                     <td>{{plant.variety}}</td>
                 </tr>
+                <div class="card-action">
+                    <a href="{% url 'edit_plant' plant.id %}">Edit</a>
+                    <a href="{% url 'delete_plant' plant.id %}">Delete</a>
+                </div>
                 {% endfor %}
             </tbody>
         </table>

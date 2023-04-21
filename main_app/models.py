@@ -49,5 +49,8 @@ class Plant(models.Model):
     def __str__(self):
         return f"{self.get_variety_display()} on {self.date}"
     
+    def get_absolute_url(self):
+        return reverse('journal', kwargs={'garden_id': self.id})
+    
     class Meta:
         ordering = ['-date']

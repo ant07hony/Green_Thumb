@@ -24,13 +24,13 @@ def journal(request, garden_id):
        'plant_form': plant_form,
     })
     
-def add_plant(request, garden_id):
+def add_plant(request, garden_id, plant_id):
     form = PlantForm(request.POST)
     if form.is_valid():
         new_plant = form.save(commit=False)
         new_plant.garden_id = garden_id
         new_plant.save()
-    return redirect('journal', garden_id=garden_id)
+    return redirect('journal', garden_id=garden_id, plant_id=plant_id)
     
 
 class GardenCreate(CreateView):
@@ -48,8 +48,9 @@ class GardenDelete(DeleteView):
 class PlantUpdate(UpdateView):
     model = Plant
     fields = ['name','date','variety']
+    success_url = '/gardens'
 
 class PlantDelete(DeleteView):
     model = Plant
-    success_url = '/gardens/<int:pk>'
+    success_url = '/garden/<int:garden_id>'
     
