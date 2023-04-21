@@ -45,3 +45,11 @@ class GardenDelete(DeleteView):
     model = Garden
     success_url = '/gardens'
     
+class PlantUpdate(UpdateView):
+    model = Plant
+    fields = ['name','date','variety']
+
+class PlantDelete(DeleteView):
+    model = Plant
+    success_url = '/gardens/<int:pk>'
+    

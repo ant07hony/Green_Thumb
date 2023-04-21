@@ -16,5 +16,9 @@ urlpatterns = [
     
     path('gardens/<int:pk>/delete/', views.GardenDelete.as_view(), name='gardens_delete'),
     
-    path('gardens/<int:garden_id>/add_plant/', views.add_plant, name='add_plant')
+    path('gardens/<int:garden_id>/add_plant/', views.add_plant, name='add_plant'),
+    
+    path('gardens/<int:pk>/update', views.PlantUpdate.as_view(), name='edit_plant'),
+    
+    path('gardens/<int:pk>/delete', views.PlantDelete.as_view(), name='delete_plant'),
 ]

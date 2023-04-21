@@ -1,53 +1,57 @@
 {% extends 'base.html'%}
 {% block content %}
 
-<h1 class="card-title">{{ garden.name }} Journal</h1>
+    <h1 class="card-title">{{ garden.name }} Journal</h1>
 
-<div class="card">
-  <div class="card-content">
-    <p>Description: {{ garden.description|linebreaks }}</p>
-  </div>
+    <div class="card">
+        <div class="card-content">
+            <p>Description: {{ garden.description|linebreaks }}</p>
+        </div>
 
-  <div class="card">
-    <p>{{ garden.date }} Entry: {{ garden.journal | linebreaks }}   
-    </p>
-  </div>
+        <div class="card">
+            <p>{{ garden.date }} Entry: {{ garden.journal | linebreaks }}   
+            </p>
+        </div>
 
-</div>
+    </div>
 
 
-<div class="col s6">
-    <form action="{% url 'add_plant' garden.id %}" method="POST">
-    {% csrf_token %}
-    <!-- Render the inputs -->
-    {{ plant_form.as_p }}
-    <input type="submit" class="btn" value="Add Plant">
-  </form>
-    <table class="striped">
-      <thead>
-        <tr><th>Date</th><th>Varieties</th></tr>
-      </thead>
-      <tbody>
-        {% for plant in garden.plant_set.all %}
-          <tr>
-            <td>{{plant.date}}</td>
-            <td>{{plant.variety}}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
+    <div class="col s6">
 
-  <script>
-    const dateEl = document.getElementById('id_date')
-    M.Datepicker.init(dateEl, {
-        format: 'yyyy-mm-dd',
-        defaultDate: new Date(),
-        setDefaultDate: true,
-        autoClose: true
-    })
+        <form action="{% url 'add_plant' garden.id %}" method="POST">
+            {% csrf_token %}
+            {{ plant_form.as_p }}
+            <input type="submit" class="btn"    value="Add Plant">
+        </form>
 
-  </script>
+        <table class="striped">
+            <thead>
+                <tr><th>Date</th><th>Name</th><th>Variety</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for plant in garden.plant_set.all %}
+                <tr>
+                    <td>{{plant.date}}</td>
+                    <td>{{plant.name}}</td>
+                    <td>{{plant.variety}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const dateEl = document.getElementById('id_date')
+        M.Datepicker.init(dateEl, {
+            format: 'yyyy-mm-dd',
+            defaultDate: new Date(),
+            setDefaultDate: true,
+            autoClose: true
+        })
+
+    </script>
 
 {% endblock %}
 

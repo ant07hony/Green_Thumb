@@ -41,11 +41,13 @@ class Plant(models.Model):
     name = models.CharField(max_length=100)
     date = models.DateField()
     variety = models.CharField(max_length=100)
-    seeds_sown = models.IntegerField()
-    germination = models.DateField()
-    garden = models.ForeignKey(Garden, default=True, on_delete=models.CASCADE)
+    seeds_sown = models.IntegerField(null=True)
+    germination = models.DateField(null=True)
+    garden = models.ForeignKey(Garden, on_delete=models.CASCADE)
     
     
     def __str__(self):
-        return self.name
+        return f"{self.get_variety_display()} on {self.date}"
     
+    class Meta:
+        ordering = ['-date']
