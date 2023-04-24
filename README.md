@@ -9,6 +9,7 @@ Screenshots:
 -- see visuals folder
 
 Technologies Used:
+Heroku
 Python
 Django
 Html
