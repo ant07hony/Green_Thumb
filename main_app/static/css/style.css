@@ -7,7 +7,6 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  /* background-image: url(https://img.freepik.com/free-vector/blank-white-notepaper-design-vector_53876-161340.jpg?w=2000); */
   background-color :rgb(253, 248, 214);
   background-size: contain;
 }
@@ -166,7 +165,6 @@ div.card-action {
 .sign-up {
   padding: 10px;
 }
-
 
 #journal-title {
   display: flex;
