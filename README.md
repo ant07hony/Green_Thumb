@@ -1,5 +1,23 @@
 # Green_Thumb
-One-stop shop for tracking and planning of any garden setup
+
+Title:
+Green Thumb! Your Garden Buddy
+
+One-stop shop for tracking and planning of your garden setup
+
+Screenshots:
+-- see visuals folder
+
+Technologies Used:
+Python
+Django
+Html
+Css
+
+Getting Started:
+Heroku Deployment Link:
+
+https://greenthumb.herokuapp.com/accounts/login/?next=/
 
 Trello Board
 https://trello.com/b/iCSM3T3h/p3-green-thumb

@@ -7,7 +7,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-image: url(https://img.freepik.com/free-vector/blank-white-notepaper-design-vector_53876-161340.jpg?w=2000);
+  /* background-image: url(https://img.freepik.com/free-vector/blank-white-notepaper-design-vector_53876-161340.jpg?w=2000); */
   background-color :rgb(253, 248, 214);
   background-size: contain;
 }
@@ -19,7 +19,7 @@ main {
 footer.page-footer {
   padding-top: 0;
   text-align: center;
-  /* background-color: rgb(126, 240, 126); */
+  
 }
 
 div.nav-wrapper {
@@ -30,24 +30,29 @@ div.nav-wrapper {
 }
 
 h1 {
-  /* border: black solid 2px; */
-  display: flex;
-  justify-content: space-around;
-  margin: 25px 0 0 0;
-  padding: 5px;
-  /* background-color: white; */
   
+  display: flex;
+  justify-content: center;
+  margin: 25px 0 20px 0;
+  padding: 5px;
+  background-color: rgba(203, 218, 36);
+  border-radius: 5px;
+  border-color: black;
+  color: white;
+  box-shadow: 2px 2px 2px black;
+  text-shadow: 2px 2px 2px black; 
 }
+
+
 
 .left {
   display: grid;
-  /* border: black solid 1px; */
   height: 85px;
 
 }
 
 .title-img {
-  /* background-image: url(https://img.freepik.com/free-vector/person-s-green-thumb_1308-18854.jpg); */
+  background-image: url(https://img.freepik.com/free-vector/person-s-green-thumb_1308-18854.jpg);
   background-size: contain;
   height: 55px;
   width: 60px;
@@ -117,16 +122,6 @@ div.card-action {
   text-shadow: 1px 1px 1px black;
 }
 
-h1 {
-  justify-content: center;
-  background-color: rgba(203, 218, 36);
-  border-radius: 50px;
-  border-color: black;
-  color: white;
-  box-shadow: 2px 2px 2px black;
-  text-shadow: 2px 2px 2px black;
-}
-
 .h1-card-content {
   text-shadow: 2px 2px 2px black;
   color: white;
@@ -135,7 +130,6 @@ h1 {
 
 .headers {
   display: flex;
-  /* text-align: center; */
   justify-content: center;
 }
 
@@ -143,10 +137,6 @@ h1 {
   margin: 10px 0;
   
 }
-  
-/* .login>button {
-  justify-content: center;
-} */
 
 .right {
   color: black;
@@ -164,8 +154,23 @@ h1 {
   color: black;
 }
 
+.home {
+  display: grid;
+}
 
+.home-msg {
+  display: flex;
+  justify-content: center;
+}
 
+.about-sub {
+  display: flex;
+  justify-content: center;
+}
+
+.sign-up {
+  padding: 10px;
+}
 
 
 #journal-title {
@@ -200,5 +205,13 @@ h1 {
 }
 
 #id_journal {
+  background-color: white;
+}
+
+#id_password1 {
+  background-color: white;
+}
+
+#id_password2 {
   background-color: white;
 }
