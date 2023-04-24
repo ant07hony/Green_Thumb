@@ -14,7 +14,7 @@
 <body>
   <header class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper">
+      <div class="nav-wrapper" background-color="green">
         <ul>
           <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Green Thumb</a></li>
         </ul>
@@ -24,7 +24,6 @@
           <li><a href="{% url 'index' %}">View all Gardens</a></li>
           <li><a href="{% url 'logout' %}">Log Out</a></li>
           {% else %}
-          <li><a href="{% url 'login' %}">Log In</a></li>
           <li><a href="{% url 'signup' %}">Sign Up</a></li>
           <li><a href="{% url 'login' %}">Log In</a></li>
           {% endif %}
@@ -37,7 +36,7 @@
     {% endblock %}
   </main>
   <footer class="page-footer">
-    <div class="">All Rights Reserved, &copy; 2023 Green Thumb &nbsp;</div>
+    <div class="color">All Rights Reserved, &copy; 2023 Green Thumb &nbsp;</div>
   </footer>
 </body>
 </html>

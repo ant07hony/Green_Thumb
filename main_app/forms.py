@@ -6,4 +6,8 @@ class PlantForm(ModelForm):
         model = Plant
         fields = ['name','date','variety']
         
+class JournalForm(ModelForm):
+    class Meta:
+        model = Garden
+        fields = ['date', 'journal']        
         

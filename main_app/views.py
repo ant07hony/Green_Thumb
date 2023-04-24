@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
-from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.views.generic import CreateView, UpdateView, DeleteView, ListView
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from .models import *
-from .forms import PlantForm
+from .forms import *
 
 # Create your views here.
 @login_required
@@ -28,10 +28,24 @@ def journal(request, garden_id):
     return render(request, 'gardens/journal.html', {
        'garden': garden,
        'plant_form': plant_form,
+       'add_entry': add_entry,
     })
     
+# def add_entry(request, garden_id):
+#     garden = Garden.objects.get(id=garden_id)
+#     return render(request, 'gardens/journal.html', {
+#         'garden': garden
+#     })
+def add_entry(request, garden_id):
+    form = JournalForm(request.POST)
+    if form.is_valid():
+        new_entry = form.save(commit=False)
+        new_entry.garden_id = garden_id
+        new_entry.save()
+    return redirect('journal', garden_id=garden_id)
+    
 @login_required
-def add_plant(request, garden_id, plant_id):
+def add_plant(request, garden_id):
     form = PlantForm(request.POST)
     if form.is_valid():
         new_plant = form.save(commit=False)
@@ -79,3 +93,7 @@ class PlantDelete(LoginRequiredMixin, DeleteView):
     model = Plant
     success_url = '/garden/<int:garden_id>'
     
+class JournalList(ListView):
+    model = Garden
+    fields = ['date', 'journal']
+    template_name = "gardens/journal.html"
