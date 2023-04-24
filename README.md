@@ -10,10 +10,11 @@ Screenshots:
 
 Technologies Used:
 Heroku
+Postgres
 Python
 Django
 Html
-Css
+Css/ Css Materialize
 
 Getting Started:
 Heroku Deployment Link:
