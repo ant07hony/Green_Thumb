@@ -128,11 +128,6 @@ div.card-action {
   padding: 24px;
 }
 
-.headers {
-  display: flex;
-  justify-content: center;
-}
-
 .entry {
   margin: 10px 0;
   
