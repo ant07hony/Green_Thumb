@@ -14,9 +14,14 @@
 <body>
   <header class="navbar-fixed">
     <nav>
-      <div class="nav-wrapper" background-color="green">
+      <div class="nav-wrapper" >
         <ul>
-          <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Green Thumb</a></li>
+          <li>
+            <div class="left">
+              <span><a href="{% url 'home' %}" class="left brand-logo-top">Green Thumb!</span></a></span></span>
+              <span class="left brand-logo-bottom"><h6>Your Garden Buddy</h6></span>
+            </div>
+          </li>
         </ul>
         <ul class="right">
           <li><a href="{% url 'about' %}">About</a></li>

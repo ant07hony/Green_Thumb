@@ -7,6 +7,9 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  background-image: url(https://img.freepik.com/free-vector/blank-white-notepaper-design-vector_53876-161340.jpg?w=2000);
+  background-color :rgb(253, 248, 214);
+  background-size: contain;
 }
   
 main {
@@ -19,30 +22,151 @@ footer.page-footer {
   /* background-color: rgb(126, 240, 126); */
 }
 
-.entry {
-  margin: 10px 0;
+div.nav-wrapper {
+  background-color: rgb(72, 138, 72);
+  color: rgb(5, 5, 5);
+  height:85px;
+  border: 0 0 10px 0 solid black;
+}
+
+h1 {
+  /* border: black solid 2px; */
+  display: flex;
+  justify-content: space-around;
+  margin: 25px 0 0 0;
+  padding: 5px;
+  /* background-color: white; */
   
 }
+
+.left {
+  display: grid;
+  /* border: black solid 1px; */
+  height: 85px;
+
+}
+
+.title-img {
+  /* background-image: url(https://img.freepik.com/free-vector/person-s-green-thumb_1308-18854.jpg); */
+  background-size: contain;
+  height: 55px;
+  width: 60px;
+}
+
+.right {
+  text-shadow: 5px 5px 5px black;
+  color: black;
   
+}
+
+.container {
+  margin: 0 50px 0 85px;
+}
+
+.left.brand-logo-top {
+  font-size: 50px;
+  height: 55px;
+  color: rgb(253, 252, 252);
+  font-weight: 450;
+  text-shadow: 5px 5px 5px black;
+  
+}
+
+.left.brand-logo-bottom {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  height: 85px;
+}
+
+.left.brand-logo-bottom>h6 {
+  font-size: 20px;
+  font-weight: 250;
+  margin: 0;
+  padding: 3px 25px 0 0
+}
+
+.add-btn {
+  border: black solid 1px;
+  border-radius: 5px;
+  background-color: red;
+  padding: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+.add-btn>a {
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+
+.card {
+  border-radius: 5px;
+}
+
+.card-content>a {
+  color: black;
+}
+
+div.card-action {
+  background-color: rgb(111, 181, 163);
+}
+
+.btn {
+  background-color: red;
+  text-shadow: 1px 1px 1px black;
+}
+
+h1 {
+  justify-content: center;
+  background-color: rgba(203, 218, 36);
+  border-radius: 50px;
+  border-color: black;
+  color: white;
+  box-shadow: 2px 2px 2px black;
+  text-shadow: 2px 2px 2px black;
+}
+
+.h1-card-content {
+  text-shadow: 2px 2px 2px black;
+  color: white;
+  padding: 24px;
+}
+
 .headers {
   display: flex;
   /* text-align: center; */
   justify-content: center;
 }
 
+.entry {
+  margin: 10px 0;
+  
+}
+  
 /* .login>button {
   justify-content: center;
 } */
+
+.right {
+  color: black;
+}
+
+.nav-wrapper>li>a {
+  color: black;
+}
 
 .page-footer {
   background-color: rgb(72, 138, 72);
 }
 
-
-
-div.nav-wrapper {
-  background-color: rgb(72, 138, 72);
+.nav-wrapper>a {
+  color: black;
 }
+
+
+
+
 
 #journal-title {
   display: flex;
@@ -57,4 +181,24 @@ div.nav-wrapper {
 #entry-journal {
   margin: 5px 0;
   text-indent: 25px;
+}
+
+#id_password {
+  background-color: white;
+}
+
+#id_username {
+  background-color: white;
+}
+
+#id_description {
+  background-color: white;
+}
+
+#id_date {
+  background-color: white;
+}
+
+#id_journal {
+  background-color: white;
 }

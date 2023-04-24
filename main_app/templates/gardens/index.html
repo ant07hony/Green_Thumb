@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-    <span>
-        <ul>
-            <li><a href="{% url 'gardens_create' %}">Add Garden</a></li>
-        </ul>
-    </span>
 
-    <h1>Garden List</h1>
+<div class="h1-card">
+    <div class="h1-card-content">
+        <h1>Garden List</h1>
+    </div>
+</div> 
+
+<span>
+    <ul>
+        <li><button class="add-btn"><a color="white" href="{% url 'gardens_create' %}">Add Garden</a></button></li>
+    </ul>
+</span>
 
     {% for garden in gardens %}
         <div class="card">
