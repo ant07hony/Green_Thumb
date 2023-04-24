@@ -28,21 +28,16 @@ def journal(request, garden_id):
     return render(request, 'gardens/journal.html', {
        'garden': garden,
        'plant_form': plant_form,
-       'add_entry': add_entry,
     })
     
+
 # def add_entry(request, garden_id):
-#     garden = Garden.objects.get(id=garden_id)
-#     return render(request, 'gardens/journal.html', {
-#         'garden': garden
-#     })
-def add_entry(request, garden_id):
-    form = JournalForm(request.POST)
-    if form.is_valid():
-        new_entry = form.save(commit=False)
-        new_entry.garden_id = garden_id
-        new_entry.save()
-    return redirect('journal', garden_id=garden_id)
+#     form = JournalForm(request.POST)
+#     if form.is_valid():
+#         new_entry = form.save(commit=False)
+#         new_entry.garden_id = garden_id
+#         new_entry.save()
+#     return redirect('journal', garden_id=garden_id)
     
 @login_required
 def add_plant(request, garden_id):
